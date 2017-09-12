@@ -1,21 +1,20 @@
 package hello;
 
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public class PersonRepository {
+public class PersonDAO {
 
     @Autowired
-    private SessionFactory sessionFactory;
+    JdbcTemplate jdbcTemplate;
 
     public void saveUser(Person user) {
-        sessionFactory.getCurrentSession().persist(user);
-        sessionFactory.getCurrentSession().flush();
+        jdbcTemplate.update("insert into person (name, last_name) values (?, ?)", user.getName(), user.getLastName());
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @Autowired
-    private PersonRepository repository;
+    private PersonDAO repository;
 
     @RequestMapping("/")
     public String index() {

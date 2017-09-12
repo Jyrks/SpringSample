@@ -1,5 +1,5 @@
 create table person (
-        id serial,
+        id serial primary key,
         name text,
         last_name text
 )
