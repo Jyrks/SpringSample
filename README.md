@@ -1,5 +1,5 @@
 Flyway looks for db/migration folder by default.
-Just adding the dependency will cause Flyway to migrate on startup(Also requires spring-jdbc and postgresql).
+Just adding the dependency will cause Flyway to migrate on startup(Also requires spring-boot-starter-jdbc and postgresql).
 
 Creating database:
 
